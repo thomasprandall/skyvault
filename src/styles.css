@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
+body{
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,h7{
+  font-family:Rubik, Arial, Helvetic, sans-serif;
+  font-weight:bold;
+}
+
 :root {
     --jumbotron-padding-y: 3rem;
   }
@@ -28,6 +41,10 @@
     max-width: 40rem;
   }
   
+  .container{
+    font-family: Lato, serif;
+  }
+  
   footer {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -41,11 +58,15 @@
     background-color: #CCC !important;
   }
 
-  .bg-secondary{
+  a{
+    color: #BA6F2A;
+  }
+
+  .bg-warning,
+  .btn-primary {
     background-color: #BA6F2A !important;
   }
 
   .btn-primary{
-    background-color: #BA6F2A;
     border-color: #495755;
   }

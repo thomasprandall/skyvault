@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavComponent } from '../nav/nav.component';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +6,8 @@ import { NavComponent } from '../nav/nav.component';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  facebookURL = 'https://www.facebook.com/skyvaultmt';
+  youtubeURL = 'https://www.youtube.com/channel/UCpsM5h2d_Wmep-PYF8Fzlgw';
   constructor() {
   }
 

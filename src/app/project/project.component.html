@@ -1,58 +1,35 @@
 <!-- Portfolio Item Heading -->
-<h1 class="my-4">Page Heading
-    <small>Secondary Text</small>
-  </h1>
+<h1 class="my-4">{{ project.name }}
+  <small>{{ project.subtitle }}</small>
+</h1>
 
-  <!-- Portfolio Item Row -->
-  <div class="row">
+<!-- Portfolio Item Row -->
+<div class="row">
 
-    <div class="col-md-8">
-      <img class="img-fluid" src="http://placehold.it/750x500" alt="">
-    </div>
-
-    <div class="col-md-4">
-      <h3 class="my-3">Project Description</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-      <h3 class="my-3">Project Details</h3>
-      <ul>
-        <li>Lorem Ipsum</li>
-        <li>Dolor Sit Amet</li>
-        <li>Consectetur</li>
-        <li>Adipiscing Elit</li>
-      </ul>
-    </div>
-
+  <div class="col-md-{{ mainColumns }}">
+    <div *ngIf="project.vidid" class="embed-responsive embed-responsive-16by9" [innerHtml]="vidsource"></div>
+    <img *ngIf="!project.vidid" class="img-fluid" [src]="project.imgsource" alt="">
   </div>
-  <!-- /.row -->
-
-  <!-- Related Projects Row -->
-  <h3 class="my-4">Related Projects</h3>
-
-  <div class="row">
-
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a routerLink="/project">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </a>
-    </div>
-
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a routerLink="/project">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </a>
-    </div>
-
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a routerLink="/project">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </a>
-    </div>
-
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a routerLink="/project">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </a>
-    </div>
-
+  <div class="col-md-4" *ngIf="project.desc || project.bullets">
+    <h3 class="my-3">Project Description</h3>
+    <p>{{ project.desc }}</p>
+    <h3 *ngIf="project.bullets" class="my-3">Project Details</h3>
+    <ul *ngFor="let point of project.bullets">
+      <li>{{ point }}</li>
+    </ul>
   </div>
-  <!-- /.row -->
+
+</div>
+<!-- /.row -->
+
+<!-- Related Projects Row -->
+<h3 class="my-4">Related Projects</h3>
+
+<div class="row">
+  <div *ngFor="let project of projects" class="col-md-3 col-sm-6 mb-4">
+    <a routerLink="/project/{{ project.id }}">
+      <img class="img-fluid" [src]="project.imgsource" alt="{{ project.name }}">
+    </a>
+  </div>
+</div>
+<!-- /.row -->

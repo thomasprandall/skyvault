@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+import { EmbedVideo } from 'ngx-embed-video/dist';
+
 import { AppComponent } from './app.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { OptionsComponent } from './options/options.component';
@@ -11,6 +14,8 @@ import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { LandingComponent } from './landing/landing.component';
 import { ProjectComponent } from './project/project.component';
+import { VidheaderComponent } from './vidheader/vidheader.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +27,15 @@ import { ProjectComponent } from './project/project.component';
     FooterComponent,
     ContactComponent,
     LandingComponent,
-    ProjectComponent
+    ProjectComponent,
+    VidheaderComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    EmbedVideo.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

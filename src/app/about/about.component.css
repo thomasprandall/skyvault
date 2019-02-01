@@ -1,0 +1,11 @@
+.bg-image-full {
+  background: no-repeat center -50px scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+header{
+    min-height:500px;
+}
