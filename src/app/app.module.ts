@@ -11,7 +11,7 @@ import { NavComponent } from './nav/nav.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { LandingComponent } from './landing/landing.component';
 import { ProjectComponent } from './project/project.component';
 import { VidheaderComponent } from './vidheader/vidheader.component';
